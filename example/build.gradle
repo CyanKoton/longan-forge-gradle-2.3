@@ -4,7 +4,8 @@ buildscript {
         maven { url = "https://files.minecraftforge.net/maven" }
     }
     dependencies {
-        classpath 'com.anatawa12.forge:ForgeGradle:2.3-1.0.+'
+        //classpath 'io.github.longan-studio:LonganForgeGradle-2.3:2.3-1.0.+'
+        classpath 'io.github.longan-studio:LonganForgeGradle-2.3:2.3-1.0.6.2'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
