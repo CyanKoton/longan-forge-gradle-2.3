@@ -13,7 +13,7 @@ buildscript {
 }
 
 plugins {
-    id("com.jfrog.bintray") version "1.8.4"
+    //id("com.jfrog.bintray") version "1.8.4"
     `maven-publish`
     java
     idea
@@ -25,12 +25,12 @@ plugins {
 
 apply(plugin = "license")
 
-group = "com.anatawa12.forge"
+group = "io.github.longan-studio"
 
 version = property("version")!!
 
 base {
-    archivesBaseName = "ForgeGradle"
+    archivesBaseName = "LonganForgeGradle"
 }
 java {
     targetCompatibility = JavaVersion.VERSION_1_8
@@ -39,6 +39,11 @@ java {
 
 repositories {
     mavenLocal()
+    
+    maven("https://maven.aliyun.com/repository/public/") {
+        name = "aliyun"
+    }
+    
     maven("https://maven.minecraftforge.net/") {
         name = "forge"
     }
@@ -354,7 +359,7 @@ license {
 
 publishing {
     publications {
-        val bintray by creating(MavenPublication::class) {
+	val maven by this.creating(MavenPublication::class) {
             from(components["java"])
 
             pom {
@@ -413,21 +418,23 @@ publishing {
 
         maven {
             name = "mavenCentral"
-            url = if (version.toString().endsWith("SNAPSHOT")) uri("https://oss.sonatype.org/content/repositories/snapshots")
-            else uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+            url = if (version.toString().endsWith("SNAPSHOT"))
+                uri("https://s01.oss.sonatype.org/content/repositories/snapshots")
+            else uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
 
             credentials {
-                username = project.findProperty("com.anatawa12.sonatype.username")?.toString() ?: ""
-                password = project.findProperty("com.anatawa12.sonatype.passeord")?.toString() ?: ""
+                username = project.findProperty("ossUsername")?.toString() ?: ""
+                password = project.findProperty("ossPassword")?.toString() ?: ""
             }
         }
     }
 }
 
 signing {
-    sign(publishing.publications["bintray"])
+    sign(publishing.publications["maven"])
 }
 
+/*
 if (project.hasProperty("push_release")) {
     bintray {
         user = project.findProperty("BINTRAY_USER")?.toString() ?: ""
@@ -446,10 +453,11 @@ if (project.hasProperty("push_release")) {
         })
     }
 }
+*/
 
-val bintrayUpload by tasks.getting
-val assemble by tasks.getting
-bintrayUpload.dependsOn(assemble)
+//val bintrayUpload by tasks.getting
+//val assemble by tasks.getting
+//bintrayUpload.dependsOn(assemble)
 
 // write out version so its convenient for doc deployment
 file("build").mkdirs()
