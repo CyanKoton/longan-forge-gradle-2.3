@@ -182,7 +182,7 @@ public abstract class BasePlugin<K extends BaseExtension> implements Plugin<Proj
                 addMavenRepo(proj, "forge", URL_FORGE_MAVEN, false);
 
                 //ALIYUN_MAVEN 阿里
-                addMavenRepo(proj, "aliyun", URL_ALIYUN_MAVEN);
+                //addMavenRepo(proj, "aliyun", URL_ALIYUN_MAVEN);
 
                 // URL_MAVEN2_MAVEN 中央
                 //addMavenRepo(proj, "maven", URL_MAVEN_MAVEN);
