@@ -277,15 +277,18 @@ public abstract class BasePlugin<K extends BaseExtension> implements Plugin<Proj
         if (!displayBanner)
             return;
 
-        LOGGER.lifecycle("#################################################");
-        LOGGER.lifecycle("         ForgeGradle {}        ", this.getVersionString());
-        LOGGER.lifecycle("   https://github.com/anatawa12/ForgeGradle-2.3  ");
-        LOGGER.lifecycle("#################################################");
-        LOGGER.lifecycle("                 Powered by MCP                  ");
-        LOGGER.lifecycle("             http://modcoderpack.com             ");
-        LOGGER.lifecycle("     by: Searge, ProfMobius, R4wk, ZeuX          ");
-        LOGGER.lifecycle("     Fesh0r, IngisKahn, bspkrs, LexManos         ");
-        LOGGER.lifecycle("#################################################");
+        LOGGER.lifecycle("###########################################################");
+        LOGGER.lifecycle("          ForgeGradle {}        ", this.getVersionString());
+        LOGGER.lifecycle(" https://github.com/longan-studio/longan-forge-gradle-2.3  ");
+        LOGGER.lifecycle("###########################################################");
+        LOGGER.lifecycle("                      Powered by MCP                       ");
+        LOGGER.lifecycle("                http://modcoderpack.com                    ");
+        LOGGER.lifecycle("          by: Searge, ProfMobius, R4wk, ZeuX               ");
+        LOGGER.lifecycle("          Fesh0r, IngisKahn, bspkrs, LexManos              ");
+        LOGGER.lifecycle("              Lss233 Reversions for 1.7.10                 ");
+        LOGGER.lifecycle("              beanflame Longan Forge Gradle                ");
+        LOGGER.lifecycle("###########################################################");
+        LOGGER.lifecycle("###########################################################");
 
         for (String str : lines)
             LOGGER.lifecycle(str);
