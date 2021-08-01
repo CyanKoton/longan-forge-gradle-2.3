@@ -180,10 +180,24 @@ public abstract class BasePlugin<K extends BaseExtension> implements Plugin<Proj
             {
                 // the forge's repository doesn't have pom file.
                 addMavenRepo(proj, "forge", URL_FORGE_MAVEN, false);
+
+                //ALIYUN_MAVEN 阿里
+                addMavenRepo(proj, "aliyun", URL_ALIYUN_MAVEN);
+
+                // URL_MAVEN2_MAVEN 中央
+                addMavenRepo(proj, "maven", URL_MAVEN_MAVEN);
                 proj.getRepositories().mavenCentral();
+
+                // URL_LONGAN_GITHUB_MAVEN 龙眼工作室maven仓库 1222 8888
+                addMavenRepo(proj, "longan-studio-maven", URL_LONGAN_STUDIO_GITHUB_MAVEN);
+
+                // URL_LONGAN_MAVEN 龙眼 1222 8888
+                addMavenRepo(proj, "longan", URL_LONGAN_MAVEN);
+
                 addMavenRepo(proj, "minecraft", URL_LIBRARY);
             }
         });
+
 
         // do Mcp Snapshots Stuff
         getRemoteJsons();

@@ -120,12 +120,43 @@ public class Constants
     public static final String URL_FF              = "https://anatawa12.github.io/ForgeGradle-resources/fernflower-fix-FG1.2.zip";
     public static final String URL_ASSETS          = "http://resources.download.minecraft.net";
     public static final String URL_LIBRARY         = "https://libraries.minecraft.net/"; // Mojang's Cloudflare front end
+
+
+
+    // ----------------------------------------------------------------------------------
+
+
+    // Forge
     //public static final String URL_LIBRARY         = "https://minecraft-libraries.s3.amazonaws.com/"; // Mojang's AWS server, as Cloudflare is having issues, TODO: Switch back to above when their servers are fixed.
     public static final String URL_FORGE_MAVEN     = "https://maven.minecraftforge.net";
     public static final List<String> URLS_MCP_JSON = Arrays.asList(
             URL_FORGE_MAVEN + "/de/oceanlabs/mcp/versions.json",
             "http://export.mcpbot.bspk.rs/versions.json"
     );
+
+
+    // ----------------------------------------------------------------------------------
+
+    // longan-studio-maven
+
+    // 龙眼 GitHub MAVEN  https://longan.beanflame.cn/maven
+    public static final String URL_LONGAN_STUDIO_GITHUB_MAVEN  = "https://github.com/longan-studio/maven";
+
+    // 龙眼   https://longan.beanflame.cn/maven
+    public static final String URL_LONGAN_MAVEN  = "https://longan.beanflame.cn/maven";
+
+    // 阿里 https://maven.aliyun.com/repository/public
+    public static final String URL_ALIYUN_MAVEN  = "https://maven.aliyun.com/repository/public";
+
+    // MAVEN 中央  https://repo1.maven.org/maven2
+    public static final String URL_MAVEN_MAVEN  = "https://repo1.maven.org/maven2";
+
+
+    // ----------------------------------------------------------------------------------
+
+
+
+
 
     // configs
     public static final String CONFIG_MCP_DATA       = "forgeGradleMcpData";
